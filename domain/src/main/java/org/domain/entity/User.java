@@ -13,7 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="m_account")
+@Table(name="m_user")
 public class User implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -30,7 +30,7 @@ public class User implements Serializable{
 	private Integer loginFailureCount;
 
 	@ManyToMany(cascade=CascadeType.ALL)
-	@JoinTable(name = "m_account_role", 
+	@JoinTable(name = "m_user_role", 
 		joinColumns = @JoinColumn(name = "username"), 
 		inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;

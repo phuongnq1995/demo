@@ -16,7 +16,7 @@
 		<postgresql.version>9.4.1212</postgresql.version>
 		<junit.version>3.8.1</junit.version>
 		<jstl.version>1.2</jstl.version>
-		<apachetiles.version>3.0.5</apachetiles.version>
+		<apachetiles.version>3.0.7</apachetiles.version>
 		<javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
 		<javax.servlet-ap.version>3.1.0</javax.servlet-ap.version>
 		<commons-logging.version>1.2</commons-logging.version>
@@ -29,10 +29,10 @@
 		<commons-pool2.version>2.4.2</commons-pool2.version>
 		<slf4j.version>1.6.4</slf4j.version>
 		<org.lazyluke.version>0.2.7</org.lazyluke.version>
-		<hibernate.version>4.0.1.Final</hibernate.version>
-		<validation-api.version>1.0.0.GA</validation-api.version>
+		<hibernate.version>5.0.12.Final</hibernate.version>
+		<validation-api.version>1.1.0.Final</validation-api.version>
 		<hibernate.jpa.version>1.0.1.Final</hibernate.jpa.version>
-		<hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
+		<hibernate-validator.version>5.3.5.Final</hibernate-validator.version>
 		<spring-data-jpa.version>1.11.7.RELEASE</spring-data-jpa.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>

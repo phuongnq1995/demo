@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<named-native-query name="User.loadUserByUsername" >
+		<query>
+			SELECT
+				u.username as username,
+				u.fullname as fullname,
+				u.is_enabled as is_enabled,
+				u.login_failure_count as login_failure_count,
+				r.role_name as role_name,
+				r.role_id   as role_id
+			FROM m_user u
+			LEFT JOIN m_user_role ur on u.username = ur.username
+			LEFT JOIN m_role r on ur.role_id = r.role_id  
+			WHERE u.username = :username </query>
+	</named-native-query>
+</entity-mappings>

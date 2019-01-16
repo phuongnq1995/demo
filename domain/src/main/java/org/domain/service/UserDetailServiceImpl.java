@@ -7,7 +7,8 @@ import java.util.Set;
 import org.domain.entity.Role;
 import org.domain.entity.User;
 import org.domain.model.UserCustomDetails;
-import org.domain.repository.UserJpaRepository;
+import org.domain.model.UserModel;
+import org.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,10 +23,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserDetailServiceImpl implements UserDetailsService {
 
 	@Autowired
-	UserJpaRepository userJpaRepository;
+	UserRepository userJpaRepository;
 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userJpaRepository.findOne(username);
+		UserModel u = userJpaRepository.loadUserByUsername(username);
+		System.out.println("debug");
 		if (user == null) {
 			throw new UsernameNotFoundException("user not found");
 		}

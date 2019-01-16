@@ -14,7 +14,7 @@ public class AuthForm implements Serializable{
 	private String fullname;
 	@NotEmpty
 	private String password;
-	@NotEmpty
+
 	private String passwordConfirm;
 
 	public String getUsername() {

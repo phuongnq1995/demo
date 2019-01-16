@@ -9,9 +9,11 @@
 	<sec:http>
 		<sec:form-login login-page="/auth/login" login-processing-url="/auth/login" default-target-url="/"
 			always-use-default-target="true" authentication-failure-handler-ref="authenticationFailureHandler" />
+		<sec:intercept-url pattern="/" access="permitAll" />
 		<sec:intercept-url pattern="/auth/login" access="isAnonymous()" />
+		<sec:intercept-url pattern="/auth/register" access="isAnonymous()" />
 		<sec:intercept-url pattern="/**" access="isAuthenticated()" />
-		<sec:logout logout-success-url="/auth/login" />
+		<sec:logout logout-success-url="/auth/login" logout-url="/auth/logout" />
 		<sec:access-denied-handler ref="accessDeniedHandler" />
 		<sec:session-management />
 	</sec:http>
